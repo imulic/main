@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+#{set title:'Guess the number between 1 and 20' /}
+
+#{set 'moreScripts' }
+<script type="text/javascript" >
+$("#num").keypress(function (e){
+	  var charCode = (e.which) ? e.which : e.keyCode;
+	  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+	    return false;
+	  }
+	});
+</script>
+#{/set}
+
+#{ifErrors}
+   <h3>There are some errors</h3>
+   #{errors}
+       <li class="error" >${error}</li>
+   #{/errors}
+#{/ifErrors}
+
+#{if flash?.expired}
+	<p class="error">
+	  ${flash.expired}
+	</p>
+#{/if}
+
+#{if flash?.error}
+    <p class="error">
+        ${flash.error}
+    </p>
+#{/if}
+
+#{if flash?.number_of_guesses}
+	<p class="info">
+	   ${flash?.number_of_guesses} guesses left
+	</p>
+#{/if}
+
+#{if flash?.correct}
+	<p class="correct">
+	  ${flash.correct}
+	</p>
+#{/if}
+<hr>
+
+<div id="main">
+	<form id="guess_form" action="@{Application.guess}" > <!-- This is a reverse route notation, get the controller method from the routes file -->
+		<label for="inputEdit">Guess number between 1 and 20:</label>
+		<br>
+		<input id="num" name="number"  type="text" size=2 value="" />#{error 'number' /}
+		<input type="submit" />
+	</form>
+</div>
+<hr>

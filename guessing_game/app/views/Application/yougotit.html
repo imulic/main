@@ -1,0 +1,8 @@
+#{extends 'main.html' /}
+#{if flash?.correct}
+	<p class="correct">
+	  ${flash.correct}
+	</p>
+#{/if}
+
+<a href="@{Application.index}">Play again</a>

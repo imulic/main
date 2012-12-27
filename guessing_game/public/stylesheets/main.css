@@ -1,0 +1,22 @@
+body, html,form {
+	margin: 0;
+	padding: 0;
+	background: white;
+	font-family: Helvetica, Black;
+	font-size: xx-large;
+}
+
+.error {
+	color: #c00;
+	font-weight: normal;
+}
+
+.info {
+	color: green;
+}
+
+.correct {
+	font-family: fantasy;
+	font-size: xx-large;
+    background-color: yellow;
+}

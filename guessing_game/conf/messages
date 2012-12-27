@@ -1,0 +1,10 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+app.version=0.1
+app.title=Guess it
+app.welcome=Welcome to Guess the number
+validation.required=%s is required field
+validation.max=%s can not be greater than %d
+validation.min=%s can not be smaller than %d
+app.correct="You won !!!"
