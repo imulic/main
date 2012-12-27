@@ -67,7 +67,7 @@ public class Application extends Controller {
     	System.out.println("number of guesses: "+number_of_guesses);
     	
     	if (number_of_guesses>=2) {
-    		flash.put("expired","Three times is maximum number of tries.");
+    		flash.put("you_loose","Correct number was "+random_number);
     		checkGuess(number);
     		startagain();
     	} 

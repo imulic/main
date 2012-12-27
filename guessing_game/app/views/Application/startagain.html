@@ -1,3 +1,9 @@
 #{extends 'main.html' /}
 <h3>GAME OVER (you had three chances)</h3>
+#{if flash?.you_loose}
+	<p class="info">
+	  ${flash.you_loose}
+	</p>
+#{/if}
+
 <a href="@{Application.index}">Play again?</a>
